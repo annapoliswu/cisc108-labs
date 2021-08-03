@@ -1,0 +1,14 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-advanced-reader.ss" "lang")((modname snakenewversion) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
+(define RADIUS 10)
+(define WORMPART (circle RADIUS  "solid" "red"))
+(define BACKGROUND (empty-scene 500 500))
+
+(define seg1 (make-posn 20 20 ))
+
+(define-struct snake(los direction))
+(define snake1 (make-snake (list seg1) "right")) 
+
+(define-struct snakeworld (snake level score))
+(define sw1 (make-snakeworld snake1 1 0))
